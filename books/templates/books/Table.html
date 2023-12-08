@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+      body{
+        background: url() no-repeat;
+        background-size: cover;
+        width: 100vw;
+        height: 100vh;
+        position: relative;
+      }
+      .main{
+        border: 2.5px solid rgb(237, 213, 0);
+        padding: 15px;
+        padding-bottom: 25px;
+        border-radius: 15px;
+        background-position: center;
+      }
+      span{
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        font-size: 40px;
+        margin-left:30px;
+      }
+      table {
+        font-family: arial, sans-serif;
+        border-collapse: collapse;
+        width: 95%;
+        height: 100%;
+        font-size: 20px;
+        border-radius: 20px;
+        margin-left: 30px;
+        margin-top: 10px;
+      }
+      
+      td, th {
+        border: 1px solid rgb(0, 0, 0);
+        text-align: left;
+        padding: 8px;
+        margin: 5px;
+      }
+      th{
+        background:   rgb(237, 213, 0);
+      }
+      tr:nth-child(even) {
+        background-color: #d0d0d0;
+      }
+      table tr:hover {
+        background-color: rgb(121, 121, 121);
+      }
+    </style>
+    <title>Book Table</title>
+</head>
+<body>
+    <div class="main">
+     <table>
+        <span>Books Table</span>
+         <tr>
+            <th>Caption</th>
+            <th>description</th>
+            <th>cost</th>
+            <th>count</th>
+            <th>author</th>
+        </tr>
+        {% for book in all_book %}
+        <tr>
+            <td>{{book.caption}}</td>
+            <td>{{book.brief}}</td>
+            <td>{{book.cost}}</td>
+            <td>{{book.count}}</td>
+            <td>{{book.author}}</td>
+        </tr>
+        {% endfor %}
+     </table>
+    </div>
+</body>
+</html>
